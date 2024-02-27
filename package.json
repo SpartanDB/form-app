@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:herf": "ng build --base-href ./",
+    "build:github": "npm run delete:docs && npm run build:herf && npm run copy:dist",
+    "delete:docs": "del docs",
+    "copy:dist": "copyfiles dist/form-app/browser/* ./docs -f"
   },
   "private": true,
   "dependencies": {
