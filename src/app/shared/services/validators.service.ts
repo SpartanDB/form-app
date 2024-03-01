@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+} from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class ValidatorsService {
@@ -7,7 +12,7 @@ export class ValidatorsService {
   public emailPattern: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
   public cantBeStrider = (control: FormControl): ValidationErrors | null => {
-    const value: string = control.value.trim().toLowerCase();
+    const value: string = control.value?.trim().toLowerCase();
     if (value === 'strider') {
       return {
         noStrider: true,
@@ -21,7 +26,7 @@ export class ValidatorsService {
   }
 
   public isFielOneEqualToFieldTwo(field: string, field2: string) {
-    return (formGroup: AbstractControl<any,any>): ValidationErrors | null => {
+    return (formGroup: AbstractControl<any, any>): ValidationErrors | null => {
       const fieldValue = formGroup.get(field)?.value;
       const fieldValue2 = formGroup.get(field2)?.value;
 
