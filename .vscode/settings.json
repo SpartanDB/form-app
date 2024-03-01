@@ -18,5 +18,6 @@
         "titleBar.inactiveBackground": "#79021b99",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#79021b"
+    "peacock.color": "#79021b",
+    "cSpell.diagnosticLevel": "Hint"
 }
